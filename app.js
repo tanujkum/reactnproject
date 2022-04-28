@@ -2,6 +2,8 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const app = express();
+const dotenv=require("dotenv");
+dotenv.config()
 
 app.use(cors({
     origin:'*'
@@ -10,7 +12,7 @@ app.use(cors({
 const con = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password: "Td@apasteron!9713#6842",
+    password: process.env.PASSWORD,
     insecureAuth : true,
     database:'reactn'
 });
@@ -30,6 +32,7 @@ app.get('/gettingdata',(req,res)=>{
     });
 })
 
-app.listen(8000, () => {
+const port=process.env.PORT || 8001
+app.listen(port, () => {
     console.log("kilimanjaro");
 });
