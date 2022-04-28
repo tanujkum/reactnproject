@@ -8,11 +8,11 @@ require('dotenv').config()
 app.use(cors({
     origin:'*'
 }));
-console.log(process.env.PASSWORD)
+
 const con = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password: process.env.PASSWORD,
+    password: `${process.env.PASSWORD}#6842`,
     insecureAuth : true,
     database:'reactn'
 });
