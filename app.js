@@ -2,7 +2,6 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const app = express();
-const dotenv=require("dotenv");
 require('dotenv').config()
 
 app.use(cors({
@@ -10,7 +9,7 @@ app.use(cors({
 }));
 
 const con = mysql.createConnection({
-    host:'localhost',
+    host:'192.168.1.149',
     user:'root',
     password: `${process.env.PASSWORD}#6842`,
     insecureAuth : true,
@@ -34,5 +33,5 @@ app.get('/gettingdata',(req,res)=>{
 
 const port=process.env.PORT || 8001
 app.listen(port, () => {
-    console.log("kilimanjaro");
+    console.log(`server is running on port ${port}`);
 });
