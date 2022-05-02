@@ -31,7 +31,7 @@ app.get('/gettingdata',(req,res)=>{
     });
 })
 app.get('/gettingdata1',(req,res)=>{
-    let a=[
+    let a=
         [
             {
             userId: 1,
@@ -94,7 +94,6 @@ app.get('/gettingdata1',(req,res)=>{
             completed: true
             }
         ]
-    ]
     console.log(a)
     res.send(a)
 })
