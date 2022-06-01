@@ -1,5 +1,5 @@
 const express = require("express");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const cors = require("cors");
 const app = express();
 require('dotenv').config()
@@ -11,7 +11,7 @@ app.use(cors({
 const con = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password: `${process.env.PASSWORD}#6842`,
+    password: `Td@apasteron!9713#6842`,
     insecureAuth : true,
     database:'reactn'
 });
@@ -98,7 +98,7 @@ app.get('/gettingdata1',(req,res)=>{
     res.send(a)
 })
 
-const port=process.env.PORT || 8001
+const port=8000;
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 });
